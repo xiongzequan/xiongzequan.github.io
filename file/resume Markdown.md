@@ -76,7 +76,7 @@ Research Librarian of East China Normal University
 
 2.  段宇锋,李伟伟,熊泽泉．R 语言与数据可视化\[M]．上海：华东师范大学出版社，2017.
 
-## Research Funds
+## Grants
 
 1.  2023.10-2026.12 国家社科基金一般项目“面向学科交叉融合的信息资源服务创新体系研究”（23BTQ084）
 
@@ -105,3 +105,6 @@ Research Librarian of East China Normal University
 - Master’s Degree in zoology, **East China Normal University** _(2007 – 2010)_
 
 - Bachelor's Degree in aquaculture, **Hainan University** _(2003 – 2007)_
+
+## Talks
+- 受邀主讲，2023年科学计量评价与前沿热点监测高级分析师培训班（中国科学技术信息研究所，国家级专业技术人员继续教育基地）（2023.10.16-2023.10.20）
