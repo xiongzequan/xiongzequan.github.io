@@ -1,284 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style type="text/css" media="print">
-@page {
-  size: auto;  /* auto is the initial value */
-  margin: 0mm; /* this affects the margin in the printer settings */
-}
-</style>
-<style type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>熊泽泉 - 学术简历</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-body {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 10%;
-  font-size: 13px;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-*:not(table) {
-    line-height: 1.5;
-    box-sizing: content-box;
-}
+        :root {
+            --primary: #6366f1;
+            --secondary: #4f46e5;
+            --bg: #ffffff;
+            --text: #1e293b;
+        }
 
-i,
-cite,
-em,
-var,
-address,
-dfn {
-    font-style: italic;
-}
+        .dark {
+            --bg: #0f172a;
+            --text: #f8fafc;
+        }
 
-strong {
-    font-weight: bold;
-}
-
-p {
-    margin: 10px 0;
-    color: #555;
-}
-
-h1:first-of-type,
-div > div:first-of-type h1 {
-      margin-top: 14px;
-}
-
-h1,
-h2,
-h3,
-h5 {
-    font-weight: bold;
-}
-
-h1 {
-    font-size: 1.6rem;
-    line-height: 28px;
-    border-bottom: 3px double #999;
-    margin: 52px 0 15px 0;
-    padding-bottom: 7px;
-    color: #000;
-}
-
-h2 {
-    font-size: 1.3rem;
-    line-height: 23px;
-    border-bottom: 1px solid #dbdbdb;
-    margin: 30px 0 13px 0;
-    padding-bottom: 7px;
-    color: #333;
-}
-
-h3,
-h4 {
-    font-size: 1.2rem;
-    line-height: 18px;
-    margin: 20px 0 2px;
-    color: #333;
-}
-
-h5,
-h6 {
-    font-size: 1rem;
-    line-height: 17px;
-    margin: 10px 0 -4px;
-    color: #333;
-}
-
-blockquote {
-    margin: 15px 0;
-}
-
-blockquote {
-    border-left: 4px solid #dddddd;
-    padding: 0 15px;
-    color: #777777;
-}
-
-blockquote > :first-child {
-    margin-top: 0;
-}
-
- blockquote > :last-child {
-    margin-bottom: 0;
-}
-
-pre {
-    margin: 2px 0 8px;
-    padding: 18px;
-    background-color: #f5f7f8;
-}
-
-code {
-    color: #c1788b;
-    padding: 4px 4px 2px 0;
-    letter-spacing: -0.3px;
-}
-
-pre code {
-    padding: 0;
-    color: inherit;
-    white-space: pre-wrap;
-    background-color: transparent;
-}
-
-pre.addon {
-    border: 1px solid #e8ebed;
-    background-color: #fff;
-}
-
-img {
-    margin: 4px 0 10px;
-    box-sizing: border-box;
-    vertical-align: top;
-    max-width: 100%;
-}
-
-table {
-    margin: 2px 0 14px;
-    color: #555;
-    width: auto;
-    border-collapse: collapse;
-    box-sizing: border-box;
-}
-
-table th, 
-table td {
-    height: 32px;
-    padding: 5px 14px 5px 12px;
-}
-
-table td {
-    border: 1px solid #eaeaea;
-}
-
-table th {
-    border: 1px solid #72777b;
-    border-top: 0;
-    background-color: #7b8184;
-    font-weight: 300;
-    color: #fff;
-    padding-top: 6px;
-}
-
-ul,
-menu,
-ol,
-dir {
-    display: block;
-    list-style-type: disc;
-    padding-left: 17px;
-    margin: 6px 0 10px;
-    color: #555;
-}
-
-ol {
-    list-style-type: decimal;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
-}
-
-ul li,
-ol li {
-    position: relative;
-}
-
-ul p, ol p {
-    margin: 0;
-}
-
-ul li.task-list-item:before,
-ol li.task-list-item:before,
-pre ul li:before {
-    content: "";
-}
-
-hr {
-    border-top: 1px solid #eee;
-    margin: 16px 0;
-}
-
-a {
-    text-decoration: underline;
-    color: #5286bc;
-}
-
-a:hover {
-    color: #007cff;
-}
-
-</style>
+        .timeline::before {
+            @apply absolute left-0 top-0 h-full w-[2px] bg-slate-200 dark:bg-slate-700;
+            content: '';
+        }
+    </style>
 </head>
-<body>
-<h1>Zequan Xiong ：）</h1>
-<p>Research Librarian of East China Normal University</p>
-<h2>Contact</h2>
-<p>| <a href="mailto:zqxiong@library.ecnu.edu.cn">Email</a> | <a href="https://xiongzequan.github.io">Website</a> | <a href="https://faculty.ecnu.edu.cn/_s24/xzq/main.psp">Faculty Page</a></p>
-<h2>Research Interests</h2>
-<ul>
-<li>Scientometrics</li>
-<li>Information Literacy</li>
-<li>Digital Economy</li>
-</ul>
-<h2>Publications</h2>
-<h3>Journal Papers</h3>
-<ol>
-<li>Xiong Z, Peng X, Yang L, Lou W, Zhao S X. Motivation for downloading academic publications[J]. Library &amp; Information Science Research. 2023, 45(2): 101239.</li>
-<li>Peng Xia, Xie Yangwei, Xiong Zequan* and Yang Li. Exploring librarians' intentions to collaborate in research: A model integrating the Theory of Planned Behavior and Social Exchange Theory. Journal of Librarianship and Information Science.2022.</li>
-<li>Xiong Zequan, Duan Yufeng. Evaluating the impact of books in Chinese  Studies: A case study  of books authored by UCLA scholars[J]. Malaysian Journal of Library &amp; Information Science. 2019, 24(3):23-38.</li>
-<li>Duan Yufeng, Xiong Zequan*. Download patterns of journal papers and their influencing factors[J]. Scientometrics, 2017, 112(3):1761-1775.</li>
-<li>彭霞,熊泽泉*,杨莉.高校图书馆员科研合作意愿及其影响因素分析[J].图书馆理论与实践,2023(01):123-130</li>
-<li>熊泽泉, 彭霞, 杨莉. 基于使用数据计量的CASHL文献资源保障研究[J]. 大学图书馆学报, 2022, 40(02): 11-19.</li>
-<li>杨莉,郭劲赤,熊泽泉.高校学生移动信息素养现状及差异探究[J].图书馆理论与实践,2022(04):68-75+95.</li>
-<li>郭劲赤,熊泽泉,朱涵,杨莉,高山.大学生移动信息安全素养现状及教学模式研究[J].图书馆理论与实践,2021(06):87-92+111.</li>
-<li>刘伟,许宪春,熊泽泉.数字经济分类的国际进展与中国探索[J].财贸经济,2021,42(7):32-48.</li>
-<li>杨莉,熊泽泉*.CiteScore与期刊影响因子的学科差异性研究[J].中国科技期刊研究,2021,32(01):135-143.</li>
-<li>段宇锋, 熊泽泉. 温州城市书房现象[J]. 图书馆杂志, 2020, 39(11): 30-35.</li>
-<li>熊泽泉, 段宇锋. 场馆形态自助图书馆运营模式研究 ——以台州市“和合书吧”为例[J]. 图书馆杂志, 2020, 39(9): 64-69.</li>
-<li>熊泽泉, 段宇锋. 中文学术期刊论文的引文模式研究——以2006-2008年图书情报领域期刊论文为例[J]. 图书情报工作, 2019, 63(8): 107-115.</li>
-<li>杨莉，熊泽泉*，段宇锋. 基于分位数回归的期刊论文被引量预测研究[J]. 情报科学. 2019, 37(10): 60-66.</li>
-<li>许鑫，熊泽泉. 互动与争鸣——数位人文的方法与工具[J]. 图书馆杂志. 2018, 12: 39-45.(人大复印报刊资料2019年第5期全文转载)</li>
-<li>熊泽泉,段宇锋.论文早期下载量可否预测后期被引量？——以图书情报领域期刊为例[J].图书情报知识,2018,(04):49-59.</li>
-<li>熊泽泉,段宇锋.RFID技术在深圳图书馆的应用[J].图书馆杂志,2018,37(03):49-55. (人大复印报刊资料2018年第6期全文转载)</li>
-<li>熊泽泉,段宇锋.上海图书馆“创·新空间”[J].图书馆杂志,2018,37(02):26-32.</li>
-<li>段宇锋,熊泽泉.上海图书馆市民数字阅读计划[J].图书馆杂志,2018,37(01):34-40.</li>
-<li>顾笑迎,熊泽泉,张浩,华屹立,曾婷,王超亚.生物识别技术竞争态势分析[J].情报探索,2016(04):11-18.</li>
-<li>顾笑迎,熊泽泉,宋振世,吴瑨.科研机构个体内科技评估体系研究——以T大学环境类学科为例[J].农业图书情报学刊,2016,28(04):79-82.</li>
-<li>顾笑迎,熊泽泉,宋振世,吴瑨.科研机构科技评估指标体系研究——以上海市环境类科研机构为例[J].情报探索,2016(02):30-33.</li>
-<li>顾笑迎,熊泽泉,宋振世.中国深海资源研究的学术影响力评估[J].情报探索,2015(09):28-32+38.</li>
-<li>周健,仇玉芹,宋振世,熊泽泉,蒋萍.高校图书馆开展决策支持服务之探索与实践——以华东师范大学图书馆为例[J].上海高校图书情报工作研究,2015,25(03):6-10.</li>
-<li>顾笑迎,熊泽泉,周健,张静波.基于Web of Science的深海资源研究文献计量分析[J].现代情报,2014,34(06):107-112.</li>
-<li>熊泽泉.H指数相关文献的量化可视化分析[J].情报探索,2012(09):12-15.</li>
-</ol>
-<h3>Books</h3>
-<ol>
-<li>顾笑迎,蒋萍,熊泽泉．大学生信息素养教育与论文写作[M]．上海：华东师范大学出版社，2016.  </li>
-<li>段宇锋,李伟伟,熊泽泉．R语言与数据可视化[M]．上海：华东师范大学出版社，2017.</li>
-</ol>
-<h2>Research Funds</h2>
-<ol>
-<li>2023.10-2026.12国家社科基金一般项目“面向学科交叉融合的信息资源服务创新体系研究”（23BTQ084）</li>
-<li>2019.12-2021.12 上海市哲学社会科学规划青年课题“科学大数据背景下学术文献的使用动机研究”(2019ETQ004)</li>
-<li>2021.6-2024.6 华东师范大学人文社会科学青年预研究项目"基于交叉学科前沿分析的潜在合作领域与合作伙伴发现"</li>
-<li>2020-2021年CASHL前瞻性研究课题“基于使用数据计量和使用动机调查的CASHL文献资源保障研究”（2020KT009）</li>
-<li>2018.6-2021.6  中央高校基本科研业务经费-海外发文项目“Altermerics指标在图书影响力评价中的作用”。</li>
-<li>2018.1-2018.12 中国科学技术信息研究所 “CiteScore与JCR影响因子的学科差异性研究”</li>
-<li>2017.11-2018.11 上海市高等学校图书情报工作委员会课题“基于多源数据的管理决策支持研究”</li>
-<li>2015.5-2015.12 上海图书馆(上海科学技术情报研究所)课题 “2015年战略性新兴产业情报专项——生物识别”</li>
-<li>2012.12-2013.12 中国科学技术信息研究所 “全球深海战略性资源开发产业化现状的科学计量学分析”</li>
-</ol>
-<h2>Education</h2>
-<ul>
-<li>PhD in Industrial Economics, <strong>East China Normal University</strong> <em>(2016 – 2021)</em></li>
-<li>Visiting Scholar, <strong>University of California, Los Angeles (UCLA)</strong> <em>(2017 – 2018)</em></li>
-<li>Master’s Degree in zoology, <strong>East China Normal University</strong> <em>(2007 – 2010)</em></li>
-<li>Bachelor's Degree in aquaculture, <strong>Hainan University</strong> <em>(2003 – 2007)</em></li>
-</ul>
+<body class="bg-[var(--bg)] text-[var(--text)] transition-colors duration-300">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold">熊泽泉</h1>
+            <button id="themeToggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+                <i class="fas fa-moon text-lg hidden dark:inline-block"></i>
+                <i class="fas fa-sun text-lg dark:hidden"></i>
+            </button>
+        </div>
+    </nav>
 
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- 个人信息 -->
+        <section class="mb-16 animate-fadeIn">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <img src="media/image1.jpeg" 
+                     alt="熊泽泉"
+                     class="w-48 h-48 rounded-full object-cover shadow-lg border-4 border-white dark:border-slate-800">
+                <div class="space-y-2">
+                    <h2 class="text-3xl font-bold">熊泽泉 副研究馆员</h2>
+                    <p class="text-lg text-slate-600 dark:text-slate-400">
+                        <i class="fas fa-university mr-2"></i>华东师范大学图书馆
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="mailto:zqxiong@library.ecnu.edu.cn" 
+                           class="flex items-center text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors">
+                            <i class="fas fa-envelope mr-2"></i>zqxiong@library
+                        </a>
+                        <span class="flex items-center">
+                            <i class="fas fa-phone mr-2"></i>136-7181-5845
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教育经历时间轴 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <i class="fas fa-graduation-cap mr-3 text-blue-500"></i>教育经历
+            </h2>
+            <div class="relative timeline pl-8">
+                <!-- 博士 -->
+                <div class="relative mb-8">
+                    <div class="absolute w-4 h-4 bg-blue-500 rounded-full -left-[34px] top-2"></div>
+                    <div class="card-animation p-6 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg">经济与管理学部 博士</h3>
+                        <p class="text-slate-600 dark:text-slate-400">2016.09 - 2021.06</p>
+                        <p class="mt-2">华东师范大学</p>
+                    </div>
+                </div>
+                <!-- 其他教育经历... -->
+            </div>
+        </section>
+
+        <!-- 研究成果卡片 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <i class="fas fa-book-open mr-3 text-purple-500"></i>代表著作
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-animation bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-book text-2xl text-purple-500 mr-3"></i>
+                        <h3 class="text-lg font-semibold">文献使用计量：动机、模式及应用</h3>
+                    </div>
+                    <p class="text-sm text-slate-600 dark:text-slate-400">上海社会科学院出版社, 2024</p>
+                </div>
+                <!-- 更多著作卡片... -->
+            </div>
+        </section>
+
+        <!-- 科研项目 -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 flex items-center">
+                <i class="fas fa-flask mr-3 text-green-500"></i>科研项目
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card-animation bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-green-100 dark:bg-green-900 p-3 rounded-lg mr-4">
+                            <i class="fas fa-trophy text-green-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">国家社科基金一般项目</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-400">2023.10-2026.12</p>
+                        </div>
+                    </div>
+                    <p class="text-slate-600 dark:text-slate-400">"面向学科交叉融合的信息资源服务创新体系研究" (23BTQ084)</p>
+                </div>
+                <!-- 更多项目... -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-100 dark:bg-slate-900 mt-20 py-8">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+                <div class="flex-1">
+                    <h4 class="font-semibold mb-4">熊泽泉</h4>
+                    <p class="text-slate-600 dark:text-slate-400 mb-4">华东师范大学图书馆副研究馆员</p>
+                    <div class="flex space-x-4">
+                        <a href="https://twitter.com/example" 
+                           class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="mailto:zqxiong@library.ecnu.edu.cn" 
+                           class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- 其他区块... -->
+            </div>
+            <p class="text-center mt-8 text-slate-500 dark:text-slate-400">
+                © 2024 熊泽泉. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 主题切换
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        function toggleTheme() {
+            html.classList.toggle('dark');
+            localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+        }
+
+        // 初始化主题
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        } else {
+            html.classList.remove('dark');
+        }
+
+        themeToggle.addEventListener('click', toggleTheme);
+
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeIn 0.6s ease-out forwards';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card-animation').forEach((el) => {
+            el.style.opacity = 0;
+            observer.observe(el);
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
+</html>
