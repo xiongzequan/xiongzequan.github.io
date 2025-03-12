@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电离层测绘技术：基于智能手机的全球观测</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in { animation: fadeIn 0.6s ease-out; }
+        .theme-transition { transition: background-color 0.3s, color 0.3s; }
+    </style>
+</head>
+<body class="theme-transition bg-gray-50 dark:bg-gray-900">
+    <!-- 导航栏 -->
+    <nav class="sticky top-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-lg z-50 border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <span class="text-xl font-bold text-blue-600 dark:text-blue-400">IonoMap</span>
+            <button id="themeToggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+                <span class="material-icons dark:hidden">dark_mode</span>
+                <span class="material-icons hidden dark:inline">light_mode</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 标题区块 -->
+        <section class="fade-in mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                智能手机驱动的全球电离层测绘
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                通过40亿安卓设备的GNSS信号，实现电离层总电子含量(TEC)的高分辨率实时测绘
+            </p>
+        </section>
+
+        <!-- 核心发现 -->
+        <section class="grid md:grid-cols-2 gap-8 mb-16">
+            <div class="fade-in card p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                    <span class="material-icons text-blue-500 text-2xl mr-2">map</span>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">覆盖提升</h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">
+                    测量覆盖率提升100%，在亚洲、非洲和南美等监测站稀缺区域实现全时覆盖
+                </p>
+                <div class="mt-4 h-48 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg"></div>
+            </div>
+
+            <div class="fade-in card p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
+                <div class="flex items-center mb-4">
+                    <span class="material-icons text-green-500 text-2xl mr-2">precision_manufacturing</span>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">定位精度</h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300">
+                    印度地区定位误差降低46%，全球平均误差降低15%
+                </p>
+                <div class="mt-4 h-48 bg-gradient-to-r from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900 rounded-lg"></div>
+            </div>
+        </section>
+
+        <!-- 技术实现 -->
+        <section class="fade-in mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">技术实现流程</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-blue-500">sensors</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">数据采集</h4>
+                    <p class="text-gray-600 dark:text-gray-300">双频GNSS信号接收，每日处理4000万设备数据</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-purple-500">filter_alt</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">噪声处理</h4>
+                    <p class="text-gray-600 dark:text-gray-300">加权最小二乘法消除设备偏差，标准差降低至5 TECU</p>
+                </div>
+                <div class="p-6 bg-white dark:bg-gray-800 rounded-xl">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
+                        <span class="material-icons text-green-500">public</span>
+                    </div>
+                    <h4 class="text-lg font-semibold mb-2">三维建模</h4>
+                    <p class="text-gray-600 dark:text-gray-300">98,000个电离层单元，350km薄壳模型实时计算</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 作者信息 -->
+        <footer class="fade-in mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <div class="flex flex-col items-center">
+                <div class="mb-4">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">作者信息</h3>
+                    <p class="text-gray-600 dark:text-gray-300">熊泽全</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="https://twitter.com/xiongzequan" 
+                       class="text-blue-500 hover:text-blue-600 transition-colors"
+                       target="_blank">
+                        <span class="material-icons">alternate_email</span>
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                    © 2024 IonoMap Project. 遵循CC BY 4.0许可协议
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // 主题切换
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // 滚动动画
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // 即时主题应用
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人工文化市场中的不平等性与不可预测性实验研究</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Tailwind 配置
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0070F3',
+                        secondary: '#666666',
+                        accent: '#FF4081'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hover-card {
+            transition: all 0.3s ease;
+        }
+        
+        .hover-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.1);
+        }
+
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-200">
+    <!-- 深色模式切换按钮 -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="theme-toggle" class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+            <i class="fas fa-moon dark:hidden"></i>
+            <i class="fas fa-sun hidden dark:block text-yellow-300"></i>
+        </button>
+    </div>
+
+    <!-- 主要内容区域 -->
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
+        <!-- 标题区域 -->
+        <header class="text-center mb-16 fade-in">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                人工文化市场中的不平等性与不可预测性实验研究
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">
+                探索社会影响对文化市场的影响机制
+            </p>
+        </header>
+
+        <!-- 摘要部分 -->
+        <section class="mb-16 fade-in">
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-8 hover-card">
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">研究摘要</h2>
+                <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                    [在此处添加论文摘要内容]
+                </p>
+            </div>
+        </section>
+
+        <!-- 研究背景 -->
+        <section class="mb-16 fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">研究背景</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover-card">
+                <div class="space-y-4">
+                    <p class="text-gray-700 dark:text-gray-300">
+                        [在此处添加研究背景内容]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实验设计 -->
+        <section class="mb-16 fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">实验设计</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover-card">
+                    <i class="fas fa-flask text-primary text-2xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">实验方法</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        [在此处添加实验方法]
+                    </p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover-card">
+                    <i class="fas fa-users text-primary text-2xl mb-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">参与者</h3>
+                    <p class="text-gray-700 dark:text-gray-300">
+                        [在此处添加参与者信息]
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据可视化 -->
+        <section class="mb-16 fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">实验结果</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- 图表1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover-card">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">市场不平等性分析</h3>
+                    <div class="chart-container">
+                        <canvas id="inequalityChart"></canvas>
+                    </div>
+                </div>
+                <!-- 图表2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover-card">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">预测性分析</h3>
+                    <div class="chart-container">
+                        <canvas id="predictabilityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 研究发现 -->
+        <section class="mb-16 fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">主要发现</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover-card">
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">发现 1</h3>
+                            <p class="text-gray-700 dark:text-gray-300">[在此处添加主要发现1]</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">发现 2</h3>
+                            <p class="text-gray-700 dark:text-gray-300">[在此处添加主要发现2]</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-lightbulb text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">发现 3</h3>
+                            <p class="text-gray-700 dark:text-gray-300">[在此处添加主要发现3]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 研究意义 -->
+        <section class="mb-16 fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">研究意义</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-xl p-8 shadow-lg hover-card">
+                <p class="text-gray-700 dark:text-gray-300">
+                    [在此处添加研究意义]
+                </p>
+            </div>
+        </section>
+
+        <!-- 作者信息 -->
+        <footer class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700 fade-in">
+            <div class="text-center">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">作者信息</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-2">[作者姓名]</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 hover:text-primary transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+                <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+                    © 2024 版权所有
+                </p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // 深色模式切换
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // 检查系统主题
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // 添加滚动动画
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        fadeElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            observer.observe(element);
+        });
+
+        // 示例图表数据
+        const inequalityCtx = document.getElementById('inequalityChart').getContext('2d');
+    </script>
+</body>
+</html> 
