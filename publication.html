@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - 熊泽泉</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/tailwindcss@3.4.1/lib/index.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- 基础样式 -->
+    <style>
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f6fa;
+        }
+
+        .dark body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #0ea5e9;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark .card {
+            background: #2d3748;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .publication-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .dark .publication-list li {
+            border-bottom: 1px solid #4a5568;
+        }
+
+        .publication-list li:last-child {
+            border-bottom: none;
+        }
+
+        .publication-title {
+            font-weight: 500;
+            color: #2d3748;
+        }
+
+        .dark .publication-title {
+            color: #e2e8f0;
+        }
+
+        .journal-name {
+            font-style: italic;
+            color: #4a5568;
+        }
+
+        .dark .journal-name {
+            color: #a0aec0;
+        }
+
+        .publication-meta {
+            font-size: 0.875rem;
+            color: #718096;
+        }
+
+        .dark .publication-meta {
+            color: #cbd5e0;
+        }
+
+        @media (max-width: 640px) {
+            .publication-meta {
+                font-size: 0.75rem;
+            }
+            
+            .publication-title {
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-primary-600 dark:text-primary-400">熊泽泉</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="index.html#projects" class="nav-link">项目</a>
+                    <a href="#" class="nav-link">论文</a>
+                    <a href="index.html#team" class="nav-link">团队</a>
+                    <a href="index.html#contact" class="nav-link">联系</a>
+                    <button id="theme-toggle" class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <section class="py-16">
+            <h1 class="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Publications</h1>
+            
+            <div class="card p-8">
+                <ol class="list-decimal list-inside space-y-6 publication-list">
+                    <!-- 英文论文 -->
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Xiong Z., Peng X., Yang L. 
+                            <span class="font-normal">
+                                Continuance intention to use the self‐built e‐reserve databases (SED) in Chinese academic libraries: An integrative model. 
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Journal of Librarianship and Information Science</span>. 
+                            (Accepted) 
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q2)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Peng X., Xiong Z.*, Yang, L. 
+                            <span class="font-normal">
+                                Can document characteristics affect motivations for literature usage?
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Scientometrics</span>. 
+                            2024, 129:3543-3563. 
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q1)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Xiong Z., Peng X., Yang L., Lou W.*, Zhao S X. 
+                            <span class="font-normal">
+                                Motivation for downloading academic publications.
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Library & Information Science Research</span>. 
+                            2023, 45(2): 101239. 
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q2)</span>
+                        </div>
+                    </li>
+
+                    <!-- 接前面的论文列表继续添加 -->
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Peng X., Xie Y., Xiong Z.*, Yang L. 
+                            <span class="font-normal">
+                                Exploring librarians' intentions to collaborate in research: A model integrating the Theory of Planned Behavior and Social Exchange Theory
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Journal of Librarianship and Information Science</span>
+                            2023, 55(3): 744-762
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q2)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Xiong Z., Duan Y.* 
+                            <span class="font-normal">
+                                Evaluating the impact of books in Chinese Studies: A case study of books authored by UCLA scholars
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Malaysian Journal of Library & Information Science</span>
+                            2019, 24(3): 23-38
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q3)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Duan Y., Xiong Z.* 
+                            <span class="font-normal">
+                                Download patterns of journal papers and their influencing factors
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">Scientometrics</span>
+                            2017, 112(3): 1761-1775
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SSCI, Q1)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Li E C, Xiong Z Q#, Chen L Q*, Zeng C, Li K. 
+                            <span class="font-normal">
+                                Acute toxicity of boron to juvenile white shrimp, Litopenaeus vannamei, at two salinities
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">AQUACULTURE</span>
+                            2008, 278(1-4): 175-178
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SCIE, Q1)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            Li E C, Chen L Q*, Zeng C, Yu N, Xiong Z Q, Chen X F, Qin J G. 
+                            <span class="font-normal">
+                                Comparison of digestive and antioxidant enzymes activities, haemolymph oxyhemocyanin contents and hepatopancreas histology of white shrimp, Litopenaeus vannamei, at various salinities
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">AQUACULTURE</span>
+                            2008, 274(1): 80-86
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(SCIE, Q1)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉
+                            <span class="font-normal">
+                                高校图书馆如何助力有组织科研
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">高校图书馆发展论坛</span>
+                            2024, 山东济南
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            张毅, 熊泽泉, 胡晓明等
+                            <span class="font-normal">
+                                基于ⅢF A/V规范和Avalon系统的大学图书馆视听数据库建设研究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2024, 43(01): 50-58+49
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            彭霞, 熊泽泉*, 杨莉
+                            <span class="font-normal">
+                                高校图书馆员科研合作意愿及其影响因素分析
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆理论与实践</span>
+                            2023(01): 123-130
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI扩展)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 彭霞, 杨莉
+                            <span class="font-normal">
+                                基于使用数据计量的CASHL文献资源保障研究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">大学图书馆学报</span>
+                            2022, 40(02): 11-19
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <!-- 继续添加剩余论文 -->
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            杨莉, 郭劲赤, 熊泽泉
+                            <span class="font-normal">
+                                高校学生移动信息素养现状及差异探究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆理论与实践</span>
+                            2022(04): 68-75+95
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI扩展)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            郭劲赤, 熊泽泉, 朱涵, 杨莉, 高山
+                            <span class="font-normal">
+                                大学生移动信息安全素养现状及教学模式研究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆理论与实践</span>
+                            2021(06): 87-92+111
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI扩展)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            刘伟, 许宪春, 熊泽泉
+                            <span class="font-normal">
+                                数字经济分类的国际进展与中国探索
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">财贸经济</span>
+                            2021, 42(7): 32-48
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI，权威B)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            杨莉, 熊泽泉*
+                            <span class="font-normal">
+                                CiteScore与期刊影响因子的学科差异性研究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">中国科技期刊研究</span>
+                            2021, 32(01): 135-143
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            段宇锋, 熊泽泉
+                            <span class="font-normal">
+                                温州城市书房现象
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2020, 39(11): 30-35
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 段宇锋
+                            <span class="font-normal">
+                                场馆形态自助图书馆运营模式研究——以台州市"和合书吧"为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2020, 39(9): 64-69
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 段宇锋
+                            <span class="font-normal">
+                                中文学术期刊论文的引文模式研究——以2006-2008年图书情报领域期刊论文为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书情报工作</span>
+                            2019, 63(8): 107-115
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            杨莉, 熊泽泉*, 段宇锋
+                            <span class="font-normal">
+                                基于分位数回归的期刊论文被引量预测研究
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">情报科学</span>
+                            2019, 37(10): 60-66
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            许鑫, 熊泽泉
+                            <span class="font-normal">
+                                互动与争鸣——数位人文的方法与工具
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2018, 12: 39-45
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">(人大复印报刊资料2019年第5期全文转载)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 段宇锋
+                            <span class="font-normal">
+                                论文早期下载量可否预测后期被引量？——以图书情报领域期刊为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书情报知识</span>
+                            2018(04): 49-59
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 段宇锋
+                            <span class="font-normal">
+                                RFID技术在深圳图书馆的应用
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2018, 37(03): 49-55
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                            <span class="text-gray-500 dark:text-gray-400 ml-2">(人大复印报刊资料2018年第6期全文转载)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉, 段宇锋
+                            <span class="font-normal">
+                               上海图书馆"创·新空间"
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2018, 37(02): 26-32
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            段宇锋, 熊泽泉
+                            <span class="font-normal">
+                               上海图书馆市民数字阅读计划
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">图书馆杂志</span>
+                            2018, 37(01): 34-40
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            顾笑迎, 熊泽泉, 张浩, 华屹立, 曾婷, 王超亚
+                            <span class="font-normal">
+                                生物识别技术竞争态势分析
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">情报探索</span>
+                            2016(04): 11-18
+                            <span class="text-primary-600 dark:text-primary-400 ml-2">(CSSCI)</span>
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            顾笑迎, 熊泽泉, 宋振世, 吴瑨
+                            <span class="font-normal">
+                                科研机构个体内科技评估体系研究——以T大学环境类学科为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">农业图书情报学刊</span>
+                            2016, 28(04): 79-82
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            顾笑迎, 熊泽泉, 宋振世, 吴瑨
+                            <span class="font-normal">
+                                科研机构科技评估指标体系研究——以上海市环境类科研机构为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">情报探索</span>
+                            2016(02): 30-33
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            顾笑迎, 熊泽泉, 宋振世
+                            <span class="font-normal">
+                                中国深海资源研究的学术影响力评估
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">情报探索</span>
+                            2015(09): 28-32+38
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            周健, 仇玉芹, 宋振世, 熊泽泉, 蒋萍
+                            <span class="font-normal">
+                                高校图书馆开展决策支持服务之探索与实践——以华东师范大学图书馆为例
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">上海高校图书情报工作研究</span>
+                            2015, 25(03): 6-10
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            顾笑迎, 熊泽泉, 周健, 张静波
+                            <span class="font-normal">
+                                基于Web of Science的深海资源研究文献计量分析
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">现代情报</span>
+                            2014, 34(06): 107-112
+                        </div>
+                    </li>
+
+                    <li class="text-gray-800 dark:text-gray-200 pl-4">
+                        <div class="publication-title inline-block">
+                            熊泽泉
+                            <span class="font-normal">
+                                H指数相关文献的量化可视化分析
+                            </span>
+                        </div>
+                        <div class="publication-meta mt-1">
+                            <span class="journal-name">情报探索</span>
+                            2012(09): 12-15
+                        </div>
+                    </li>
+
+                </ol>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+

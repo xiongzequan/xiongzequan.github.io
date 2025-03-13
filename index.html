@@ -1,50 +1,444 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh" class="scroll-smooth">
 <head>
-	<title> Reading List of Zequan Xiong</title>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?0d05bc943b5c94e56eece2ee84884e56";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>熊泽泉 - 华东师范大学</title>
+	<!-- TailwindCSS -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<!-- 备用CDN -->
+	<script src="https://unpkg.com/tailwindcss@3.4.1/lib/index.js"></script>
+	<script>
+		tailwind.config = {
+			darkMode: 'class',
+			theme: {
+				extend: {
+					colors: {
+						primary: {
+							50: '#f0f9ff',
+							100: '#e0f2fe',
+							200: '#bae6fd',
+							300: '#7dd3fc',
+							400: '#38bdf8',
+							500: '#0ea5e9',
+							600: '#0284c7',
+							700: '#0369a1',
+							800: '#075985',
+							900: '#0c4a6e',
+						}
+					}
+				}
+			}
+		}
+	</script>
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<!-- 基础样式 -->
+	<style>
+		/* 基础重置 */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
+		body {
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+			line-height: 1.6;
+			color: #333;
+			background-color: #f5f6fa;
+		}
+
+		/* 深色模式 */
+		.dark body {
+			background-color: #1a1a1a;
+			color: #fff;
+		}
+
+		/* 导航样式 */
+		.nav-link {
+			padding: 0.5rem 1rem;
+			color: #4a5568;
+			text-decoration: none;
+			transition: color 0.2s ease;
+		}
+
+		.nav-link:hover {
+			color: #0ea5e9;
+		}
+
+		/* 卡片样式 */
+		.card {
+			background: white;
+			border-radius: 0.75rem;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: box-shadow 0.3s ease;
+		}
+
+		.card:hover {
+			box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+		}
+
+		/* 深色模式卡片 */
+		.dark .card {
+			background: #2d3748;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+		}
+	</style>
+	<!-- 百度统计 -->
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?0d05bc943b5c94e56eece2ee84884e56";
+			var s = document.getElementsByTagName("script")[0]; 
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
 </head>
-<body>
-<h1>Ebook on Data Science</h1>
-	<p><a href="https://www.bitbybitbook.com/en/1st-ed/preface/"><i>Bit by bit: Social Research in the Digital Age</i></a> | <a href="https://www.bilibili.com/video/av668408193/?vd_source=1e51bf4bd59926d26abb03f5cd0d6276"> Online Course</a></p> 
-	<p><a href="https://datasciencebook.ca/"><i>Data Science: A First Introduction</i></a></p>
-	<p><a href="https://moderndive.com/"><i>Statistical Inference via Data Science : A ModernDive into R and the Tidyverse</i></a></p>
-	<p><a href="https://r4ds.had.co.nz/"><i>R for Data Science</i></a></p>
-	<p><a href="https://datasciencebox.org/"><i>Data Science in a Box</i></a></p>
-	<p><a href="http://rafalab.dfci.harvard.edu/dsbook-part-1/"><i>Introduction to Data Science</i></a></p>	
-	<p><a href="https://datavizpyr.com/"><i>Data Viz with Python and R</i></a></p>	
-	<p><a href="https://gabors-data-analysis.com/"><i>Data Analysis for Business, Economics, and Policy</i></a></p>
-	<p><a href="https://mixtape.scunning.com/"><i>Causal Inference: The Mixtape</i></a></p>
-	<p><a href="https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/"><i>Causal Inference: What If</i></a></p>
-	<p><a href="https://www.bradyneal.com/causal-inference-course"><i>Introduction to Causal Inference</i></a></p>	
-	<p><a href="https://www.tmwr.org/"><i>Tidy Modeling with R</i></a></p>
-	<p><a href="https://mlr3book.mlr-org.com/chapters/chapter1/introduction_and_overview.html/"><i>Applied Machine Learning Using mlr3 in R</i></a></p>
-	<p><a href="http://www.urfie.net/"><i>Using R, Python and Julia for Introductory Econometrics</i></a></p>
-	<p><a href="https://adv-r.hadley.nz/"><i>Advanced R</i></a></p>
-	<p><a href="https://bookdown.org/wshuyi/dive-into-data-science-practically/"><i>文科生数据科学上手指南</i></a></p>
-	
-	<p>Various Ebooks written by <a href="https://bookdown.org/">Bookdown</a></p>
-	
-	
-	<p></br></p>
-	<h3>Books listed below are not open access, if you need, you can contact me (for academic purpose only) or buy them on Amazon，JD，Taobao et al..</h3>
-	<p>计算社会学(Chinese version of <i>Bit by bit: Social Research in the Digital Age</i>)</p>
-	<p>社会研究方法(Chinese version of <i>Social Research Methods</i> by W.Lawrence Neuman)</p>
-	<p><i>Data-Drivern Policy Impact Evaluation</i> by Nuno Crato & Paolo Paruolo</p>
-	<p><i>Book of Why</i> by Judea Pearl</p>
-	<p></br></p>
-	<p></br></p>
-	<p><i class="latin">listed by <a href="CV.html">zqxiong</a></i></p>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+	<!-- 导航栏 -->
+	<nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 z-50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between h-16">
+				<div class="flex items-center">
+					<a href="#" class="text-xl font-bold text-primary-600 dark:text-primary-400">熊泽泉</a>
+				</div>
+				<div class="hidden md:flex items-center space-x-4">
+					<a href="#home" class="nav-link">首页</a>
+					<a href="#projects" class="nav-link">项目</a>
+					<a href="#publications" class="nav-link">论文</a>
+					<a href="#team" class="nav-link">团队</a>
+					<a href="#contact" class="nav-link">联系</a>
+					<button id="theme-toggle" class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+						<i class="fas fa-moon dark:hidden"></i>
+						<i class="fas fa-sun hidden dark:block"></i>
+					</button>
+				</div>
+				<!-- 移动端菜单按钮 -->
+				<div class="md:hidden flex items-center">
+					<button id="mobile-menu-button" class="p-2 text-gray-500 dark:text-gray-400">
+						<i class="fas fa-bars"></i>
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 移动端菜单 -->
+		<div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+			<div class="px-2 pt-2 pb-3 space-y-1">
+				<a href="#home" class="block nav-link">首页</a>
+				<a href="#projects" class="block nav-link">项目</a>
+				<a href="#publications" class="block nav-link">论文</a>
+				<a href="#team" class="block nav-link">团队</a>
+				<a href="#contact" class="block nav-link">联系</a>
+			</div>
+		</div>
+	</nav>
 
+	<!-- 主要内容 -->
+	<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+		<!-- 个人简介 -->
+		<section id="home" class="py-20">
+			<div class="max-w-6xl mx-auto">
+				<div class="flex flex-col md:flex-row gap-8 items-start">
+					<!-- 左侧：照片和社交媒体链接 -->
+					<div class="w-full md:w-1/4 flex flex-col items-center">
+						<!-- 照片部分 -->
+						<div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-4 ring-4 ring-primary-100 dark:ring-primary-900">
+							<img src="avatar.jpg" alt="熊泽泉" class="w-full h-full object-cover" 
+								 onerror="this.src='https://ui-avatars.com/api/?name=熊泽泉&background=0ea5e9&color=fff'">
+						</div>
+						<!-- 社交媒体图标 -->
+						<div class="flex gap-6 text-gray-600 dark:text-gray-400">
+							<a href="mailto:zqxiong@library.ecnu.edu.cn" 
+							   class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+								<i class="fas fa-envelope text-2xl mb-1"></i>
 
+							</a>
+							<a href="#" 
+							   class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+								<i class="fab fa-twitter text-2xl mb-1"></i>
+
+							</a>
+							<a href="#" 
+							   class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+								<i class="fas fa-graduation-cap text-2xl mb-1"></i>
+
+							</a>
+							<a href="#" 
+							   class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+								<i class="fas fa-file-alt text-2xl mb-1"></i>
+
+							</a>
+						</div>
+					</div>
+
+					<!-- 右侧：个人信息 -->
+					<div class="w-full md:w-3/4">
+						<div class="text-left mb-8">
+							<h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+								熊泽泉
+							</h1>
+							<h3 class="text-lg text-gray-600 dark:text-gray-400">
+								华东师范大学
+							</h3>
+						</div>
+						<div class="card p-8">
+							<h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">个人简介</h2>
+							<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+								熊泽泉，男，博士，研究馆员，华东师范大学图书馆跨学科支持中心主任，华东师范大学情报研究所副所长，硕士生导师。发表CSSCI、SSCI论文30余篇。主要研究方向为科学计量、数字经济。
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 最新动态 -->
+		<section id="news" class="py-16">
+			<h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">最新动态</h2>
+			<div class="space-y-6">
+				<div class="card p-6">
+					<p class="mb-2">
+						<span class="text-primary-600 dark:text-primary-400 font-semibold">[2023.10]</span>
+						获批国家社科基金一般项目"面向学科交叉融合的信息资源服务创新体系研究"（23BTQ084）
+					</p>
+					<p class="mb-2">
+						<span class="text-primary-600 dark:text-primary-400 font-semibold">[2023.09]</span>
+						获批教育部产学合作协同育人项目"高校图书馆科技信息资源利用与产业咨询服务能力培训项目"
+					</p>
+					<p>
+						<span class="text-primary-600 dark:text-primary-400 font-semibold">[2024.12]</span>
+						获评2024年上海市优秀科技情报工作者
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- 科研项目 -->
+		<section id="projects" class="py-16">
+			<h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">科研项目</h2>
+			<div class="grid gap-6">
+				<div class="card p-6">
+					<div class="mb-6">
+						<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">国家社科基金项目</h3>
+						<div class="space-y-4">
+							<div>
+								<p class="text-gray-700 dark:text-gray-300">
+									<span class="text-primary-600 dark:text-primary-400 font-semibold">【主持】</span>
+									面向学科交叉融合的信息资源服务创新体系研究（23BTQ084）
+								</p>
+								<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2023.10-2026.12</p>
+							</div>
+						</div>
+					</div>
+					<div class="mb-6">
+						<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">上海哲社基金项目</h3>
+						<div class="space-y-4">
+							<div>
+								<p class="text-gray-700 dark:text-gray-300">
+									<span class="text-primary-600 dark:text-primary-400 font-semibold">【主持】</span>
+									科学大数据背景下学术文献的使用动机研究(2019ETQ004)
+								</p>
+								<p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2019.12-2023.6</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 代表性论文 -->
+		<section id="publications" class="py-16">
+			<h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">代表性论文</h2>
+			<div class="grid gap-6 md:grid-cols-2">
+				<div class="card p-6 flex flex-col h-full">
+					<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+						Can document characteristics affect motivations for literature usage?
+					</h3>
+					<div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+						<span class="mr-4">Scientometrics</span>
+						<span>2024</span>
+					</div>
+					<div class="flex items-center gap-3 mt-auto">
+						<a href="file/Can document characteristics affect motivations for literature usage.pdf" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+							<i class="fas fa-file-pdf"></i>
+							<span class="ml-1">PDF</span>
+						</a>
+						<a href="https://doi.org/10.1007/s11192-024-05044-w" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+							<i class="fas fa-external-link-alt"></i>
+							<span class="ml-1">DOI</span>
+						</a>
+					</div>
+				</div>
+				<div class="card p-6 flex flex-col h-full">
+					<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+						Motivation for downloading academic publications
+					</h3>
+					<div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+						<span class="mr-4">Library & Information Science Research</span>
+						<span>2023</span>
+					</div>
+					<div class="flex items-center gap-3 mt-auto">
+						<a href="file/Motivation for downloading academic publications.pdf" 
+						   class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+							<i class="fas fa-file-pdf"></i>
+							<span class="ml-1">PDF</span>
+						</a>
+						<a href="https://www.sciencedirect.com/science/article/pii/S0740818823000154" 
+						   target="_blank" 
+						   rel="noopener noreferrer" 
+						   class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+							<i class="fas fa-external-link-alt"></i>
+							<span class="ml-1">DOI</span>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="text-center mt-8">
+				<a href="publication.html" 
+				   class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+					查看更多论文
+					<i class="fas fa-arrow-right ml-2"></i>
+				</a>
+			</div>
+		</section>
+
+		<!-- 团队成员 -->
+		<section id="team" class="py-16">
+			<h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">团队成员</h2>
+			<div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+				<!-- 指导教师 -->
+				<div class="card p-6">
+					<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">指导教师</h3>
+					<div class="space-y-4">
+						<div class="flex items-center gap-4">
+							<div class="w-16 h-16 rounded-full overflow-hidden bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+								<i class="fas fa-user text-2xl text-primary-600 dark:text-primary-400"></i>
+							</div>
+							<div>
+								<h4 class="text-lg font-medium text-gray-900 dark:text-white">熊泽泉</h4>
+								<p class="text-gray-600 dark:text-gray-400">研究馆员，硕士生导师</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 在读研究生 -->
+				<div class="card p-6">
+					<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">在读研究生</h3>
+					<div class="space-y-4">
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-50 dark:bg-primary-900/50 flex items-center justify-center">
+								<i class="fas fa-user-graduate text-xl text-primary-600 dark:text-primary-400"></i>
+							</div>
+							<div>
+								<h4 class="text-lg font-medium text-gray-900 dark:text-white">研究生A</h4>
+								<p class="text-gray-600 dark:text-gray-400">2023级硕士研究生</p>
+							</div>
+						</div>
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full overflow-hidden bg-primary-50 dark:bg-primary-900/50 flex items-center justify-center">
+								<i class="fas fa-user-graduate text-xl text-primary-600 dark:text-primary-400"></i>
+							</div>
+							<div>
+								<h4 class="text-lg font-medium text-gray-900 dark:text-white">研究生B</h4>
+								<p class="text-gray-600 dark:text-gray-400">2022级硕士研究生</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 毕业学生 -->
+				<div class="card p-6">
+					<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">毕业学生</h3>
+					<div class="space-y-4">
+						<div class="flex items-center gap-4">
+							<div class="w-12 h-12 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+								<i class="fas fa-user-graduate text-xl text-gray-600 dark:text-gray-400"></i>
+							</div>
+							<div>
+								<h4 class="text-lg font-medium text-gray-900 dark:text-white">毕业生A</h4>
+								<p class="text-gray-600 dark:text-gray-400">2021级 - 已就业于XXX</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<!-- 页脚 -->
+	<footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-20">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+			<div class="text-center">
+				<h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">联系方式</h3>
+				<p class="text-gray-600 dark:text-gray-400 mb-2">
+					<i class="fas fa-envelope mr-2"></i>
+					zqxiong@library.ecnu.edu.cn
+				</p>
+				<p class="text-gray-600 dark:text-gray-400">
+					<i class="fas fa-map-marker-alt mr-2"></i>
+					上海市闵行区
+				</p>
+				<div class="mt-8 text-gray-500 dark:text-gray-400 text-sm">
+					© 熊泽泉 2025
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- JavaScript -->
+	<script>
+		// 深色模式切换
+		const themeToggle = document.getElementById('theme-toggle');
+		
+		// 检查系统主题偏好
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.add('dark');
+		}
+
+		themeToggle.addEventListener('click', () => {
+			document.documentElement.classList.toggle('dark');
+		});
+
+		// 移动端菜单
+		const mobileMenuButton = document.getElementById('mobile-menu-button');
+		const mobileMenu = document.getElementById('mobile-menu');
+
+		mobileMenuButton.addEventListener('click', () => {
+			mobileMenu.classList.toggle('hidden');
+		});
+
+		// 平滑滚动
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+				const target = document.querySelector(this.getAttribute('href'));
+				if (target) {
+					target.scrollIntoView({
+						behavior: 'smooth'
+					});
+					// 关闭移动端菜单
+					mobileMenu.classList.add('hidden');
+				}
+			});
+		});
+
+		// 页面加载动画
+		document.addEventListener('DOMContentLoaded', () => {
+			document.body.classList.add('opacity-0');
+			setTimeout(() => {
+				document.body.classList.remove('opacity-0');
+				document.body.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+			}, 0);
+		});
+	</script>
 </body>
 </html>

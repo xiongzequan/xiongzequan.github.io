@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zequan Xiong - East China Normal University</title>
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Backup CDN -->
+    <script src="https://unpkg.com/tailwindcss@3.4.1/lib/index.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Base Styles -->
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f6fa;
+        }
+
+        /* Dark Mode */
+        .dark body {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        /* Navigation Styles */
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: #0ea5e9;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Dark Mode Card */
+        .dark .card {
+            background: #2d3748;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary-600 dark:text-primary-400">Zequan Xiong</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#publications" class="nav-link">Publications</a>
+                    <a href="#team" class="nav-link">Team</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button id="theme-toggle" class="p-2 text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="p-2 text-gray-500 dark:text-gray-400">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block nav-link">Home</a>
+                <a href="#projects" class="block nav-link">Projects</a>
+                <a href="#publications" class="block nav-link">Publications</a>
+                <a href="#team" class="block nav-link">Team</a>
+                <a href="#contact" class="block nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+        <!-- Biography -->
+        <section id="home" class="py-20">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <!-- 左侧：照片和社交媒体链接 - 调整宽度比例和对齐方式 -->
+                    <div class="w-full md:w-1/4 flex flex-col items-center">
+                        <!-- 照片部分 -->
+                        <div class="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden mb-4 ring-4 ring-primary-100 dark:ring-primary-900">
+                            <img src="avatar.jpg" alt="Zequan Xiong" class="w-full h-full object-cover" 
+                                 onerror="this.src='https://ui-avatars.com/api/?name=Zequan+Xiong&background=0ea5e9&color=fff'">
+                        </div>
+                        <!-- 社交媒体图标 -->
+                        <div class="flex gap-6 text-gray-600 dark:text-gray-400">
+                            <a href="mailto:zqxiong@library.ecnu.edu.cn" 
+                               class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+                                <i class="fas fa-envelope text-2xl mb-1"></i>
+                                <span class="text-sm">Email</span>
+                            </a>
+                            <a href="#" 
+                               class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+                                <i class="fab fa-twitter text-2xl mb-1"></i>
+                                <span class="text-sm">Twitter</span>
+                            </a>
+                            <a href="#" 
+                               class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+                                <i class="fas fa-graduation-cap text-2xl mb-1"></i>
+                                <span class="text-sm">Scholar</span>
+                            </a>
+                            <a href="#" 
+                               class="hover:text-primary-600 dark:hover:text-primary-400 transition-colors flex flex-col items-center">
+                                <i class="fas fa-file-alt text-2xl mb-1"></i>
+                                <span class="text-sm">CV</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 右侧：个人信息 - 调整宽度比例 -->
+                    <div class="w-full md:w-3/4">
+                        <div class="text-left mb-8">
+                            <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+                                Zequan Xiong
+                            </h1>
+                            <h3 class="text-lg text-gray-600 dark:text-gray-400">
+                                East China Normal University
+                            </h3>
+                        </div>
+                        <div class="card p-8">
+                            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Biography</h2>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                                Zequan Xiong is a Research Librarian and Master's Supervisor at East China Normal University. He serves as the Director of the Interdisciplinary Support Center at ECNU Library and Deputy Director of the Information Research Institute. With over 30 publications in CSSCI and SSCI journals, his research focuses on scientometrics and digital economy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent News -->
+        <section id="news" class="py-16">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Recent News</h2>
+            <div class="space-y-6">
+                <div class="card p-6">
+                    <p class="mb-2">
+                        <span class="text-primary-600 dark:text-primary-400 font-semibold">[2023.10]</span>
+                        Received National Social Science Foundation Grant for "Research on Innovation System of Information Resource Services for Interdisciplinary Integration" (23BTQ084)
+                    </p>
+                    <p class="mb-2">
+                        <span class="text-primary-600 dark:text-primary-400 font-semibold">[2023.09]</span>
+                        Awarded Ministry of Education Industry-Education Integration Project "Training Program for Scientific Information Resource Utilization and Industry Consulting Services in University Libraries"
+                    </p>
+                    <p>
+                        <span class="text-primary-600 dark:text-primary-400 font-semibold">[2024.01]</span>
+                        Named Outstanding Scientific Information Professional of Shanghai 2024
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Projects -->
+        <section id="projects" class="py-16">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Research Projects</h2>
+            <div class="grid gap-6">
+                <div class="card p-6">
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">National Social Science Foundation Project</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    <span class="text-primary-600 dark:text-primary-400 font-semibold">[Principal Investigator]</span>
+                                    Research on Innovation System of Information Resource Services for Interdisciplinary Integration (23BTQ084)
+                                </p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2023.10-2026.12</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Ministry of Education Project</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-gray-700 dark:text-gray-300">
+                                    <span class="text-primary-600 dark:text-primary-400 font-semibold">[Principal Investigator]</span>
+                                    Training Program for Scientific Information Resource Utilization and Industry Consulting Services
+                                </p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">2023.9-2024.9</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Publications -->
+        <section id="publications" class="py-16">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Featured Publications</h2>
+            <div class="grid gap-6 md:grid-cols-2">
+                <!-- First Paper -->
+                <div class="card p-6 flex flex-col h-full">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Can document characteristics affect motivations for literature usage?
+                    </h3>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <span class="mr-4">Scientometrics</span>
+                        <span>2024</span>
+                    </div>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <a href="https://link.springer.com/article/10.1007/s11192-024-05044-w" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <i class="fas fa-file-pdf"></i>
+                            <span class="ml-1">PDF</span>
+                        </a>
+                        <a href="https://doi.org/10.1007/s11192-024-05044-w" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="ml-1">DOI</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Second Paper -->
+                <div class="card p-6 flex flex-col h-full">
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        Motivation for downloading academic publications
+                    </h3>
+                    <div class="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                        <span class="mr-4">Library & Information Science Research</span>
+                        <span>2023</span>
+                    </div>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <a href="#" 
+                           class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <i class="fas fa-file-pdf"></i>
+                            <span class="ml-1">PDF</span>
+                        </a>
+                        <a href="https://www.sciencedirect.com/science/article/pii/S0740818823000154" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span class="ml-1">DOI</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="publication.html" 
+                   class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors">
+                    View More Publications
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Team Members -->
+        <section id="team" class="py-16">
+            <h2 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Team Members</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Supervisor -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Supervisor</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-16 h-16 rounded-full overflow-hidden bg-primary-100 dark:bg-primary-900 flex items-center justify-center">
+                                <i class="fas fa-user text-2xl text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Zequan Xiong</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Research Librarian, Master's Supervisor</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Students -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Current Students</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-50 dark:bg-primary-900/50 flex items-center justify-center">
+                                <i class="fas fa-user-graduate text-xl text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Student A</h4>
+                                <p class="text-gray-600 dark:text-gray-400">2023 Master's Student</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-primary-50 dark:bg-primary-900/50 flex items-center justify-center">
+                                <i class="fas fa-user-graduate text-xl text-primary-600 dark:text-primary-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Student B</h4>
+                                <p class="text-gray-600 dark:text-gray-400">2022 Master's Student</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alumni -->
+                <div class="card p-6">
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Alumni</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full overflow-hidden bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+                                <i class="fas fa-user-graduate text-xl text-gray-600 dark:text-gray-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Alumni A</h4>
+                                <p class="text-gray-600 dark:text-gray-400">Class of 2021 - Now at XXX</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="text-center">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">Contact</h3>
+                <p class="text-gray-600 dark:text-gray-400 mb-2">
+                    <i class="fas fa-envelope mr-2"></i>
+                    zqxiong@library.ecnu.edu.cn
+                </p>
+                <p class="text-gray-600 dark:text-gray-400">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    Shanghai
+                </p>
+                <div class="mt-8 text-gray-500 dark:text-gray-400 text-sm">
+                    © Zequan Xiong 2025
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check system theme preference
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+        });
+
+        // Mobile menu
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Page load animation
+        document.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('opacity-0');
+            setTimeout(() => {
+                document.body.classList.remove('opacity-0');
+                document.body.classList.add('opacity-100', 'transition-opacity', 'duration-500');
+            }, 0);
+        });
+    </script>
+</body>
+</html> 

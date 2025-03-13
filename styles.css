@@ -1,0 +1,145 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #34495e;
+    --accent-color: #3498db;
+    --text-color: #333;
+    --light-bg: #f5f6fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+nav {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 40px;
+}
+
+.nav-container ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-container a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-container a:hover {
+    color: var(--accent-color);
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+#biography {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+#biography h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+#biography h2 {
+    font-size: 1.5em;
+    color: var(--secondary-color);
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+#biography h3 {
+    font-size: 1.2em;
+    color: var(--secondary-color);
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.bio-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    background: var(--light-bg);
+    border-radius: 8px;
+}
+
+.bio-content h2 {
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.news-item {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.news-item p {
+    margin-bottom: 15px;
+}
+
+.news-item strong {
+    color: var(--accent-color);
+}
+
+footer {
+    margin-top: 100px;
+    padding: 40px 0;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.contact {
+    margin-bottom: 30px;
+}
+
+.contact h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    .nav-container ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    body {
+        padding: 0 15px;
+    }
+
+    #biography h1 {
+        font-size: 2em;
+    }
+
+    .bio-content {
+        padding: 20px;
+    }
+} 
