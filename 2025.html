@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨学科支持中心2025年工作计划</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // 主题切换与交互逻辑
+        function updateTheme() {
+            const isDark = localStorage.theme === 'dark' || 
+                          (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            document.documentElement.classList.toggle('dark', isDark);
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTheme();
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // 淡入动画
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-section').forEach(el => {
+                el.classList.add('opacity-0', 'transition-opacity', 'duration-500');
+                observer.observe(el);
+            });
+        });
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <main class="max-w-6xl mx-auto px-4 py-8">
+        <!-- 标题区 -->
+        <header class="mb-12 text-center animate-section">
+            <h1 class="text-4xl font-bold mb-4">跨学科支持中心2025年工作计划</h1>
+            <p class="text-xl text-gray-600 dark:text-gray-400">融合创新 · 赋能未来</p>
+        </header>
+
+        <!-- 核心内容区 -->
+        <section class="space-y-16">
+            <!-- 育人模块 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow animate-section">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-user-graduate text-3xl text-blue-500 mr-4"></i>
+                    <h2 class="text-3xl font-bold">育人方面</h2>
+                </div>
+                
+                <div class="space-y-8">
+                    <!-- 协同育人 -->
+                    <div class="pl-2 border-l-4 border-blue-200">
+                        <h3 class="text-xl font-semibold mb-3">1. 协同育人活动</h3>
+                        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                            与三大书院活动的持续开展，以讲座、微课、团队辅导等形式嵌入书院人才培养过程。
+                        </p>
+                    </div>
+
+                    <!-- 素养课程 -->
+                    <div class="pl-2 border-l-4 border-green-200">
+                        <h3 class="text-xl font-semibold mb-3">2. 升级素养课程</h3>
+                        <div class="space-y-4 ml-4">
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">(1) 研究生课程升级</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    继续完善原有的为生命科学学院开设的研究生课程，嵌入更多AI元素，提高受众面。
+                                </p>
+                            </div>
+                            <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">(2) 新课程开发</h4>
+                                <ul class="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300">
+                                    <li>基于AI的无代码编程</li>
+                                    <li>基于AI的数据分析与可视化</li>
+                                    <li>基于AI的知识管理</li>
+                                    <li>如何发现科学前沿和热点</li>
+                                    <li>如何提炼科学研究中的创新点</li>
+                                </ul>
+                                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                    联合情报咨询中心、数据与技术中心等部门进行课程设计
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 其他育人内容 -->
+                    <div class="pl-2 border-l-4 border-purple-200">
+                        <h3 class="text-xl font-semibold mb-3">3. 探索空间育人</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            对接孟书院"创新教育试验区"，进行学习空间的设计与开发，利用数智技术推动学习范式转型。
+                        </p>
+                    </div>
+
+                    <div class="pl-2 border-l-4 border-yellow-200">
+                        <h3 class="text-xl font-semibold mb-3">4. 学生科研指导</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            作为指导老师指导学生开展课题研究，已开展项目包括：
+                        </p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600 dark:text-gray-300">
+                            <li>双创项目</li>
+                            <li>顶刊科学传播项目</li>
+                            <li>信息素养大赛</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 资源模块 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow animate-section">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-database text-3xl text-green-500 mr-4"></i>
+                    <h2 class="text-3xl font-bold">资源方面</h2>
+                </div>
+                
+                <div class="space-y-8">
+                    <div class="pl-2 border-l-4 border-blue-200">
+                        <h3 class="text-xl font-semibold mb-3">1. 前沿信息推送</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            持续编撰推送《人工智能研究动态》、顶刊跨学科研究等前沿科技信息。
+                        </p>
+                    </div>
+
+                    <div class="pl-2 border-l-4 border-green-200">
+                        <h3 class="text-xl font-semibold mb-3">2. 跨学科主题资源</h3>
+                        <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                            <p class="text-gray-600 dark:text-gray-300">
+                                围绕本校的跨学科研究主题以及全球性的跨学科研究热点开展资源整理，当前合作项目：
+                            </p>
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>与资源建设中心合作"AI+"书籍揭示</li>
+                                <li>与数据与技术中心合作开放数据仓储与挖掘</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 其他模块 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow animate-section">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-plus-circle text-3xl text-purple-500 mr-4"></i>
+                    <h2 class="text-3xl font-bold">其他工作</h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 pl-2">
+                    开展跨学科和未来学习中心的相关研究
+                </p>
+            </div>
+
+            <!-- 支持模块 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow animate-section">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-handshake-angle text-3xl text-yellow-500 mr-4"></i>
+                    <h2 class="text-3xl font-bold">支持需求</h2>
+                </div>
+                
+                <div class="space-y-6 pl-2">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">1. 资金支持</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            软课题、读书会需要资金；书院也以为我们是有资金支持的。
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">2. 人员支持</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            目前中心4位老师，每位老师侧重的内容不一样，相当于机关老师但是缺少AB岗。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI应对模块 -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-shadow animate-section">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-robot text-3xl text-red-500 mr-4"></i>
+                    <h2 class="text-3xl font-bold">图书馆AI应对策略</h2>
+                </div>
+                
+                <div class="space-y-6 pl-2">
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2">1. 资源数字化</h3>
+                        <blockquote class="text-gray-600 dark:text-gray-300 italic border-l-4 border-gray-400 pl-4">
+                            "数据是AI的燃油，没有数据AI只能空转。例如纸质书无法被AI处理"
+                        </blockquote>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2">2. 应用本地化</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            商用AI的局限性：
+                            <ul class="list-disc pl-6 mt-2">
+                                <li>无法处理大数据（如processon上传限制）</li>
+                                <li>处理效果不佳（如chatECNU仅罗列章节标题）</li>
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2">3. 用户共创</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            利用学生资源优势：
+                            <span class="block mt-2 bg-blue-50 dark:bg-blue-900 p-2 rounded">
+                                学生的学习时间与AI技能掌握速度常优于工作人员
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold mb-2">4. 服务转型</h3>
+                        <p class="text-gray-600 dark:text-gray-300 font-medium">
+                            从服务型向专家型转变：
+                            <span class="text-red-500 dark:text-red-400 block mt-1">
+                                只有专家才能在AI基础上进行拔高
+                            </span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 页脚 -->
+        <footer class="border-t pt-8 mt-16 text-center text-gray-500 dark:text-gray-400 animate-section">
+            <div class="mb-4 space-y-2">
+                <p class="font-medium">跨学科支持中心</p>
+                <a href="mailto:zqxiong@library.ecnu.edu.cn" 
+                   class="inline-block text-blue-500 hover:text-blue-600 transition-colors">
+                    <i class="far fa-envelope mr-2"></i>zqxiong@library.ecnu.edu.cn
+                </a>
+            </div>
+            <p class="text-sm">© zqxiong, 2025</p>
+        </footer>
+    </main>
+
+    <style>
+        /* 自定义动画 */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-section {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+    </style>
+</body>
+</html>
