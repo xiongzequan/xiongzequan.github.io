@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学者个人主页收藏</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #2c3e50;
+    --text-light: #7f8c8d;
+    --accent: #3498db;
+    --accent-dark: #2980b9;
+    --border: #e8ecf1;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  header h1 { font-size: 2.2em; font-weight: 700; margin-bottom: 10px; }
+  header p { font-size: 1.1em; opacity: 0.8; }
+  .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.12); }
+  .card-photo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    background: #eef1f5;
+    display: block;
+  }
+  .card-photo-placeholder {
+    width: 100%;
+    height: 260px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5em;
+    color: rgba(255,255,255,0.6);
+    font-weight: 700;
+  }
+  .card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .card-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .card-institution {
+    font-size: 0.9em;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .card-field {
+    font-size: 0.88em;
+    color: var(--text-light);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .card-honor {
+    font-size: 0.82em;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+  }
+  .card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 16px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: background 0.2s;
+    align-self: flex-start;
+  }
+  .card-link:hover { background: var(--accent-dark); }
+  .card-number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85em;
+    font-weight: 600;
+  }
+  .card-photo-wrap { position: relative; }
+  @media (max-width: 700px) {
+    header h1 { font-size: 1.6em; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>学者个人主页</h1>
+  <p>科学学 · 计算社会科学 · 网络科学 · AI for Science · 数据科学</p>
+</header>
+
+<div class="container">
+<div class="grid">
+
+<!-- 1 Matthew Salganik -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.princeton.edu/~mjs3/headshot_200.jpg" alt="Matthew Salganik" loading="lazy">
+    <div class="card-number">1</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Matthew Salganik</div>
+    <div class="card-institution">🇺🇸 Princeton University</div>
+    <div class="card-field">计算社会科学 · 社会网络 · 大规模在线实验</div>
+    <div class="card-honor">著有《Bit by Bit: Social Research in the Digital Age》（计算社会科学领域经典教材）</div>
+    <a class="card-link" href="https://www.princeton.edu/~mjs3/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 2 Yian Yin -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.yianyin.net/profile.png" alt="Yian Yin" loading="lazy">
+    <div class="card-number">2</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">殷裔安 (Yian Yin)</div>
+    <div class="card-institution">🇺🇸 Cornell University</div>
+    <div class="card-field">科学学 · 网络科学 · 计算社会科学</div>
+    <div class="card-honor">Forbes 30 Under 30 in Science（2023）；Thom Young Researcher Award（2024）；论文发表于 Science、Nature、Nature Human Behaviour</div>
+    <a class="card-link" href="https://www.yianyin.net/index.html" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 3 Dashun Wang -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://images.squarespace-cdn.com/content/v1/5877ca6986e6c00f05f58f84/da21385b-b9d7-4f06-8eb9-3a32b10bb337/dashun-wang-home.jpg" alt="Dashun Wang" loading="lazy">
+    <div class="card-number">3</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">王大顺 (Dashun Wang)</div>
+    <div class="card-institution">🇺🇸 Northwestern University</div>
+    <div class="card-field">科学学（Science of Science）· 创新科学</div>
+    <div class="card-honor">Kellogg Chair of Technology；西北大学创新研究所创始主任；CSSI 创始主任；著有《The Science of Science》</div>
+    <a class="card-link" href="https://www.dashunwang.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 4 Knowledge Lab / James Evans -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://sociology.uchicago.edu/sites/default/files/2019-11/evans_0.jpg" alt="James Evans" loading="lazy">
+    <div class="card-number">4</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Knowledge Lab（James Evans）</div>
+    <div class="card-institution">🇺🇸 The University of Chicago</div>
+    <div class="card-field">科学学 · 知识社会学 · AI 与科学发现</div>
+    <div class="card-honor">实验室主任 James Evans 为芝加哥大学社会学教授，在科学学、AI辅助研究方面享有盛誉</div>
+    <a class="card-link" href="https://www.knowledgelab.org/publications/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 5 Russell J. Funk -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.russellfunk.org/static/images/photo_1.png" alt="Russell J. Funk" loading="lazy">
+    <div class="card-number">5</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Russell J. Funk</div>
+    <div class="card-institution">🇺🇸 University of Minnesota</div>
+    <div class="card-field">网络科学 · 技术战略 · 科学学 · 医疗网络</div>
+    <div class="card-honor">Mary and Jim Lawrence Fellow；研究获 NSF、AHRQ、NIHCM 资助；论文发表于 ASQ、AMJ、Management Science</div>
+    <a class="card-link" href="http://russellfunk.org/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 6 Qing Ke -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <!-- 柯庆照片：CityU有WAF保护，外部无法直接引用 -->
+<div class="card-photo-placeholder" style="background:linear-gradient(135deg,#27ae60,#2ecc71)">QK</div>
+    <div class="card-number">6</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">柯庆 (Qing Ke)</div>
+    <div class="card-institution">🇭🇰 City University of Hong Kong</div>
+    <div class="card-field">数据科学 · 科学学 · 信息计量学</div>
+    <div class="card-honor">香港城市大学数据科学系助理教授</div>
+    <a class="card-link" href="https://qke.github.io/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 7 Lingfei Wu -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://lingfeiwu.github.io/assets/images/sit-465x662.jpg" alt="Lingfei Wu" loading="lazy">
+    <div class="card-number">7</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">吴令飞 (Lingfei Wu)</div>
+    <div class="card-institution">🇺🇸 University of Pittsburgh</div>
+    <div class="card-field">科学学 · 计算社会科学 · 创新研究 · 复杂科学</div>
+    <div class="card-honor">NSF CAREER Award；NIH R01 项目；Oxford Martin Fellowship；参与提出"Disruption Index"（Nature 2019）</div>
+    <a class="card-link" href="https://lingfeiwu.github.io/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 8 Albert-László Barabási -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://cos.northeastern.edu/wp-content/uploads/2017/10/Bara_800.jpg" alt="Albert-László Barabási" loading="lazy">
+    <div class="card-number">8</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Albert-László Barabási</div>
+    <div class="card-institution">🇺🇸 Northeastern University / Harvard University</div>
+    <div class="card-field">网络科学 · 网络医学 · 科学成功学</div>
+    <div class="card-honor">美国科学院院士；网络科学奠基人；Barabási-Albert 模型提出者；著有《Linked》《Bursts》《The Formula》《Network Science》</div>
+    <a class="card-link" href="https://barabasi.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 9 Chengjun Wang -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://chengjun.github.io/zh/images/chengjun.jpeg" alt="王成军" loading="lazy">
+    <div class="card-number">9</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">王成军 (Chengjun Wang)</div>
+    <div class="card-institution">🇨🇳 南京大学</div>
+    <div class="card-field">计算传播学 · 注意力流动 · 计算叙事</div>
+    <div class="card-honor">南京大学新闻传播学院教授、博士生导师；计算传播学实验中心主任；主持国家社科基金重大项目</div>
+    <a class="card-link" href="https://chengjun.github.io/zh/cv/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 10 Manlio De Domenico -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://manliodedomenico.com/images/people/manlio_dedomenico_small.jpg" alt="Manlio De Domenico" loading="lazy">
+    <div class="card-number">10</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Manlio De Domenico</div>
+    <div class="card-institution">🇮🇹 University of Padua</div>
+    <div class="card-field">复杂系统 · 多层网络分析 · 网络医学 · 统计物理</div>
+    <div class="card-honor">IUPAP 统计物理青年科学家奖；帕多瓦网络医学中心主任；地中海复杂网络学院主任</div>
+    <a class="card-link" href="https://manliodedomenico.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 11 Alexander Gates -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://alexandergates.net/author/alexander-j.-gates/avatar_huebbfad1edfa8e198fe68a27ac6a615ca_1660967_270x270_fill_q90_lanczos_center.jpeg" alt="Alexander Gates" loading="lazy">
+    <div class="card-number">11</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Alexander Gates</div>
+    <div class="card-institution">🇺🇸 University of Virginia</div>
+    <div class="card-field">数据科学 · 科学学 · 复杂网络 · 科学网络</div>
+    <div class="card-honor">弗吉尼亚大学数据科学学院助理教授；论文发表于 PNAS、Quantitative Science Studies</div>
+    <a class="card-link" href="https://alexandergates.net/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 12 Mike Thelwall -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.sheffield.ac.uk/sites/default/files/styles/profile_square_lg_1x/public/2023-09/Mike%20Thelwall.jpg" alt="Mike Thelwall" loading="lazy">
+    <div class="card-number">12</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Mike Thelwall</div>
+    <div class="card-institution">🇬🇧 The University of Sheffield</div>
+    <div class="card-field">科学计量学 · 元科学 · 社交媒体分析 · 网络计量学</div>
+    <div class="card-honor">数据科学教授；网络计量学（Webometrics）领域开创者；领导 ESRC 国际元科学项目（AI for Research Evaluation）</div>
+    <a class="card-link" href="https://www.sheffield.ac.uk/is/people/academic/mike-thelwall" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 13 Chengzhi Zhang -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://chengzhizhang.github.io/assets/img/me.jpg" alt="章成志" loading="lazy">
+    <div class="card-number">13</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">章成志 (Chengzhi Zhang)</div>
+    <div class="card-institution">🇨🇳 南京理工大学</div>
+    <div class="card-field">文本挖掘 · 信息检索 · 自然语言处理 · 科学文本挖掘</div>
+    <div class="card-honor">南京理工大学教授；发表论文 100+ 篇（JASIST、IPM、ACL、EMNLP 等）；担任 Patterns、IPM 等期刊编委</div>
+    <a class="card-link" href="https://chengzhizhang.github.io/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 14 Yifan Qian -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://yifanqian.com/authors/admin/avatar_hu_5fe233ed869afce7.jpg" alt="Yifan Qian" loading="lazy">
+    <div class="card-number">14</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">钱一凡 (Yifan Qian)</div>
+    <div class="card-institution">🇺🇸 Northwestern University</div>
+    <div class="card-field">科学学 · 计算社会科学 · 网络科学 · 数据科学</div>
+    <div class="card-honor">西北大学科学学与创新研究助理教授</div>
+    <a class="card-link" href="https://yifanqian.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 15 James Zou -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://static.wixstatic.com/media/0f3e8f_cfa7e327b97745ddb8c4a66454b5eb3e~mv2.jpg/v1/fill/w_398,h_557,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/46824428A5822_ForWeb.jpg" alt="James Zou" loading="lazy">
+    <div class="card-number">15</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">James Zou</div>
+    <div class="card-institution">🇺🇸 Stanford University</div>
+    <div class="card-field">机器学习 · AI for Science · 生物医学 AI · 数据估值</div>
+    <div class="card-honor">ICML Outstanding Paper Award；斯坦福大学生物医学数据科学教授；论文发表于 Nature Machine Intelligence、Nature Biotechnology、NeurIPS</div>
+    <a class="card-link" href="https://www.james-zou.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 16 Andrew Ng -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.andrewng.org/images/andrew-ng-about-page.jpg" alt="Andrew Ng" loading="lazy">
+    <div class="card-number">16</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">吴恩达 (Andrew Ng)</div>
+    <div class="card-institution">🇺🇸 Stanford University / DeepLearning.AI</div>
+    <div class="card-field">机器学习 · 深度学习 · AI 教育 · 计算机视觉</div>
+    <div class="card-honor">DeepLearning.AI 创始人；Coursera 联合创始人；百度前首席科学家；Google Brain 创始成员；AI 教育先驱</div>
+    <a class="card-link" href="https://www.andrewng.org/about/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 17 Yan Holtz -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://www.yan-holtz.com/img/team/YH_pic_square.png" alt="Yan Holtz" loading="lazy">
+    <div class="card-number">17</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Yan Holtz</div>
+    <div class="card-institution">🇫🇷🇦🇺 自由职业（前 University of Queensland）</div>
+    <div class="card-field">数据可视化 · 数据科学 · R/Python/D3.js</div>
+    <div class="card-honor">高级软件工程师/数据可视化专家；创立知名数据可视化教育网站（从数据到可视化）；12年数据科学经验</div>
+    <a class="card-link" href="https://blog.yan-holtz.com/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 18 Michele Pasin -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://kmi.open.ac.uk/images/people/medium/michele-pasin.png" alt="Michele Pasin" loading="lazy">
+    <div class="card-number">18</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">Michele Pasin</div>
+    <div class="card-institution">🇮🇹🇬🇧 Springer Nature</div>
+    <div class="card-field">本体工程 · 知识图谱 · 数字人文 · 计算机科学</div>
+    <div class="card-honor">VP of Data Products at Springer Nature；人工智能博士（KMi, Open University）；负责 Nature Ontologies 平台开发</div>
+    <a class="card-link" href="https://www.michelepasin.org/index.html" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+<!-- 19 Bin Yu -->
+<div class="card">
+  <div class="card-photo-wrap">
+    <img class="card-photo" src="https://binyu.stat.berkeley.edu/images/binyu.jpg" alt="Bin Yu" loading="lazy">
+    <div class="card-number">19</div>
+  </div>
+  <div class="card-body">
+    <div class="card-name">郁彬 (Bin Yu)</div>
+    <div class="card-institution">🇺🇸 UC Berkeley</div>
+    <div class="card-field">统计学 · 可验证数据科学 · 机器学习 · 可信 AI</div>
+    <div class="card-honor">CDSS 杰出教授（Chancellor's Distinguished Professor）；COPSS Distinguished Award；提出"可验证数据科学"（Veridical Data Science）框架；2024年出版《Veridical Data Science》</div>
+    <a class="card-link" href="https://binyu.stat.berkeley.edu/" target="_blank" rel="noopener">访问主页 →</a>
+  </div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
