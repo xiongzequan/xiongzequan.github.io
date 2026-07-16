@@ -1,4 +1,4 @@
-# 公开校核与拓展来源
+# 部分公开信息来源
 
 - ACRL. [Framework for Information Literacy for Higher Education](https://www.ala.org/acrl/standards/ilframework)
 - UNESCO. [Media and Information Literacy Curriculum for Teachers](https://www.unesco.org/mil4teachers/en/curriculum)
