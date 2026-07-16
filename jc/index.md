@@ -9,10 +9,10 @@
 ## 信息素养篇
 - [第一章 信息素养基础](chapters/01-information-literacy.md)
 - [第二章 如何获取信息](chapters/02-information-access.md)
-- [第三章 如何评价信息](chapters/03-information-evaluation.md)
+- [第三章 如何撰写综述](chapters/03-information-evaluation.md)
 - [第四章 开放科学资源](chapters/04-open-science.md)
 - [第五章 如何探索学科前沿热点](chapters/05-frontiers.md)
-- [第六章 如何高效管理个人信息](chapters/06-personal-information-management.md)
+- [第六章 文献管理软件](chapters/06-personal-information-management.md)
 - [第七章 信息计量理论与工具](chapters/07-informetrics.md)
 
 ## 数据素养篇

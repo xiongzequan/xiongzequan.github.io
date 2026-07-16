@@ -8,10 +8,10 @@
 ## 信息素养篇
 - [信息素养基础](chapters/01-information-literacy.md)
 - [如何获取信息](chapters/02-information-access.md)
-- [如何评价信息](chapters/03-information-evaluation.md)
+- [如何撰写综述](chapters/03-information-evaluation.md)
 - [开放科学资源](chapters/04-open-science.md)
 - [如何探索学科前沿热点](chapters/05-frontiers.md)
-- [如何高效管理个人信息](chapters/06-personal-information-management.md)
+- [文献管理软件](chapters/06-personal-information-management.md)
 - [信息计量理论与工具](chapters/07-informetrics.md)
 
 ## 数据素养篇
@@ -19,7 +19,6 @@
 - [数据检索与获取](chapters/09-data-acquisition.md)
 - [数据管理与清洗](chapters/10-data-cleaning.md)
 - [回归与聚类](chapters/11-regression-clustering.md)
-- [相关与因果](chapters/12-correlation-causality.md)
 - [数据可视化](chapters/13-data-visualization.md)
 - [学术规范与伦理](chapters/14-academic-ethics.md)
 
