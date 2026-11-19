@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<link rel="icon" href="data:,">
+<title>斯隆奖 × NSF CAREER 重叠时间线</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0b1220; --panel:#111c2f; --line:#1e2d47; --fg:#e2e8f0; --mut:#94a3b8;
+    --career:#38BDF8; --sloan:#F97316; --same:#94A3B8;
+  }
+  body{background:radial-gradient(1200px 600px at 20% -10%,#152238 0%,var(--bg) 55%);
+       color:var(--fg);font-family:"Segoe UI",system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+       min-height:100vh;padding:20px 24px 16px;display:flex;flex-direction:column;gap:14px}
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  h1{font-size:21px;font-weight:650;letter-spacing:.2px}
+  h1 .em{color:var(--sloan)}
+  .sub{color:var(--mut);font-size:12.5px;margin-top:5px}
+  .headline{display:flex;gap:26px}
+  .hl{text-align:right}
+  .hl b{display:block;font-size:22px;font-weight:650;line-height:1.1}
+  .hl span{font-size:11px;color:var(--mut)}
+  .wrap{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:14px;flex:1;min-height:0}
+  .chart{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  #c{display:block;width:100%;height:100%}
+  aside{display:flex;flex-direction:column;gap:12px;min-height:0}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+  .card h2{font-size:11px;font-weight:600;letter-spacing:.8px;color:var(--mut);text-transform:uppercase;margin-bottom:10px}
+  .counters{display:flex;flex-direction:column;gap:9px}
+  .row{display:grid;grid-template-columns:12px 1fr auto auto;gap:9px;align-items:center;font-size:12.5px}
+  .dot{width:9px;height:9px;border-radius:50%}
+  .row .v{font-variant-numeric:tabular-nums;font-weight:600;font-size:14px;min-width:38px;text-align:right}
+  .row .p{font-variant-numeric:tabular-nums;color:var(--mut);font-size:11.5px;min-width:42px;text-align:right}
+  .bar{height:4px;border-radius:2px;background:#1b2942;overflow:hidden;grid-column:2/5;margin-top:-3px}
+  .bar i{display:block;height:100%;border-radius:2px;transition:width .12s linear}
+  .gapchart{width:100%;height:86px;display:block}
+  .gapsum{font-size:11px;color:var(--mut);margin-top:6px;display:flex;justify-content:space-between}
+  .fields{display:flex;flex-wrap:wrap;gap:6px}
+  .chip{display:flex;align-items:center;gap:6px;padding:4px 9px;border-radius:999px;font-size:11.5px;
+        border:1px solid var(--line);background:#0e1728;cursor:pointer;user-select:none;transition:.14s;color:var(--fg)}
+  .chip.off{opacity:.32}
+  .chip:hover{border-color:#3b5578}
+  .chip i{width:8px;height:8px;border-radius:50%;display:block}
+  .chip b{font-weight:500;color:var(--mut);font-variant-numeric:tabular-nums}
+  .controls{display:flex;align-items:center;gap:14px;background:var(--panel);border:1px solid var(--line);
+            border-radius:12px;padding:10px 16px}
+  button{background:#16243a;border:1px solid var(--line);color:var(--fg);border-radius:8px;
+         padding:7px 14px;font-size:12.5px;cursor:pointer;font-family:inherit;transition:.14s}
+  button:hover{background:#1d3050;border-color:#3b5578}
+  button.on{background:#1e3a5f;border-color:#3b82f6;color:#dbeafe}
+  .play{width:96px;font-weight:600}
+  #scrub{flex:1;-webkit-appearance:none;height:4px;border-radius:2px;background:#1b2942;outline:none}
+  #scrub::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;
+       background:#e2e8f0;cursor:pointer;box-shadow:0 0 0 3px rgba(226,232,240,.15)}
+  #scrub::-moz-range-thumb{width:13px;height:13px;border:0;border-radius:50%;background:#e2e8f0;cursor:pointer}
+  .year{font-variant-numeric:tabular-nums;font-size:19px;font-weight:650;min-width:52px;text-align:center;color:#f8fafc}
+  .seg{display:flex;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+  .seg button{border:0;border-radius:0;padding:6px 11px;font-size:12px}
+  .seg button+button{border-left:1px solid var(--line)}
+  .lbl{font-size:11.5px;color:var(--mut)}
+  #tip{position:absolute;pointer-events:none;background:rgba(8,15,28,.96);border:1px solid #33507a;
+       border-radius:9px;padding:9px 11px;font-size:12px;line-height:1.55;opacity:0;transition:opacity .1s;
+       box-shadow:0 8px 26px rgba(0,0,0,.55);max-width:290px;z-index:5}
+  #tip .nm{font-weight:650;font-size:12.5px;margin-bottom:3px}
+  #tip .l{display:flex;justify-content:space-between;gap:14px;color:#cbd5e1}
+  #tip .l em{font-style:normal;color:var(--mut)}
+  #tip .gd{margin-top:4px;padding-top:4px;border-top:1px solid #24395c;font-weight:600}
+  .hint{position:absolute;right:12px;top:10px;font-size:11px;color:#64748b}
+  @media (max-width:1080px){.wrap{grid-template-columns:1fr}aside{flex-direction:row;flex-wrap:wrap}
+    aside .card{flex:1 1 240px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>斯隆奖 <span class="em">×</span> NSF CAREER：同一批人的两次早期职业认可</h1>
+    <div class="sub">每个点 = 一位同时拥有两项荣誉的研究者 · 对角线上方 = 斯隆奖更早 · 下方 = CAREER 更早</div>
+  </div>
+  <div class="headline">
+    <div class="hl"><b>1,540</b><span>重叠人数</span></div>
+    <div class="hl"><b>7.7%</b><span>占 20,101 个 CAREER</span></div>
+    <div class="hl"><b>34%</b><span>占 1985 年后斯隆得主</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="chart">
+    <canvas id="c"></canvas>
+    <div id="tip"></div>
+    <div class="hint">悬停查看个人明细</div>
+  </div>
+
+  <aside>
+    <div class="card">
+      <h2>先后顺序（随动画累积）</h2>
+      <div class="counters" id="counters"></div>
+    </div>
+    <div class="card">
+      <h2>时间间隔 CAREER − 斯隆（年）</h2>
+      <canvas class="gapchart" id="gap"></canvas>
+      <div class="gapsum"><span>← CAREER 更早</span><span>斯隆更早 →</span></div>
+    </div>
+    <div class="card">
+      <h2>按斯隆学科筛选</h2>
+      <div class="fields" id="fields"></div>
+    </div>
+  </aside>
+</div>
+
+<div class="controls">
+  <button class="play" id="play">暂停</button>
+  <div class="year" id="year">1984</div>
+  <input type="range" id="scrub" min="1984" max="2027" step="0.05" value="1984">
+  <span class="lbl">速度</span>
+  <div class="seg" id="speed">
+    <button data-s="0.5">0.5×</button><button data-s="1" class="on">1×</button>
+    <button data-s="2">2×</button><button data-s="4">4×</button>
+  </div>
+  <span class="lbl">着色</span>
+  <div class="seg" id="color">
+    <button data-m="field" class="on">学科</button><button data-m="prec">先后</button>
+  </div>
+  <button id="reset">重置</button>
+</div>
+
+<script>
+const D = __DATA__;
+
+const FIELDS = [
+  {k:'Chem', c:'#4FC3F7', cn:'化学'},
+  {k:'CS',   c:'#81C784', cn:'计算机'},
+  {k:'Phys', c:'#FFB74D', cn:'物理'},
+  {k:'Math', c:'#BA68C8', cn:'数学'},
+  {k:'Neuro',c:'#E57373', cn:'神经科学'},
+  {k:'CEB',  c:'#4DD0E1', cn:'计算与演化分子生物学'},
+  {k:'Econ', c:'#FFF176', cn:'经济学'},
+  {k:'Ocean',c:'#7986CB', cn:'海洋科学'},
+  {k:'ESS',  c:'#A1887F', cn:'地球系统科学'}
+];
+const FC = {}; FIELDS.forEach(f => FC[f.k] = f.c);
+const PC = {career:'#38BDF8', sloan:'#F97316', same:'#94A3B8'};
+const PNAME = {career:'CAREER 在前', sloan:'斯隆在前', same:'同年'};
+
+const P = D.map(d => ({
+  n:d.n, s:d.s, c:d.c, f:d.f, si:d.si, ci:d.ci, a:d.a,
+  app: Math.max(d.s, d.c),
+  g: d.c - d.s,
+  p: d.c < d.s ? 'career' : (d.c > d.s ? 'sloan' : 'same')
+}));
+const FCOUNT = {}; P.forEach(p => FCOUNT[p.f] = (FCOUNT[p.f]||0) + 1);
+// deterministic sub-year jitter so that identical (year, year) pairs stay readable
+P.forEach((p, i) => {
+  const a = Math.sin(i * 12.9898) * 43758.5453;
+  const b = Math.sin(i * 78.233 + 1.7) * 12345.6789;
+  p.jx = (a - Math.floor(a) - .5) * .44;
+  p.jy = (b - Math.floor(b) - .5) * .44;
+});
+
+const X0 = 1984, X1 = 2027, Y0 = 1993, Y1 = 2027, TEND = 2027.5;
+
+let t = 1993.5, playing = true, speed = 1, colorMode = 'field', hover = null;
+const active = new Set(FIELDS.map(f => f.k));
+
+const cv = document.getElementById('c'), ctx = cv.getContext('2d');
+const gapCv = document.getElementById('gap'), gctx = gapCv.getContext('2d');
+const tip = document.getElementById('tip');
+const yearEl = document.getElementById('year');
+const scrub = document.getElementById('scrub');
+const playBtn = document.getElementById('play');
+
+let W = 0, H = 0, PAD = {l:62, r:20, t:22, b:48};
+function fit() {
+  const r = cv.parentElement.getBoundingClientRect();
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  W = Math.max(320, r.width); H = Math.max(260, r.height);
+  cv.width = W * dpr; cv.height = H * dpr;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  const gr = gapCv.parentElement.getBoundingClientRect();
+  gapCv.width = (gr.width - 28) * dpr; gapCv.height = 86 * dpr;
+  gctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+}
+const px = y => PAD.l + (y - X0) / (X1 - X0) * (W - PAD.l - PAD.r);
+const py = y => H - PAD.b - (y - Y0) / (Y1 - Y0) * (H - PAD.t - PAD.b);
+
+function reveal(p) { return Math.max(0, Math.min(1, (t - p.app) / 0.7)); }
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+
+  // region tints
+  ctx.save();
+  ctx.beginPath(); ctx.moveTo(px(X0), py(X0)); ctx.lineTo(px(X1), py(X1));
+  ctx.lineTo(px(X1), py(Y1)); ctx.lineTo(px(X0), py(Y1)); ctx.closePath();
+  ctx.fillStyle = 'rgba(249,115,22,.045)'; ctx.fill();
+  ctx.beginPath(); ctx.moveTo(px(X0), py(X0)); ctx.lineTo(px(X1), py(X1));
+  ctx.lineTo(px(X1), py(Y0)); ctx.lineTo(px(X0), py(Y0)); ctx.closePath();
+  ctx.fillStyle = 'rgba(56,189,248,.045)'; ctx.fill();
+  ctx.restore();
+
+  // grid + ticks
+  ctx.strokeStyle = '#1b2740'; ctx.lineWidth = 1;
+  ctx.fillStyle = '#7a8ba3'; ctx.font = '11px ui-sans-serif,system-ui';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  for (let y = 1985; y <= 2025; y += 5) {
+    const x = Math.round(px(y)) + .5;
+    ctx.beginPath(); ctx.moveTo(x, PAD.t); ctx.lineTo(x, H - PAD.b); ctx.stroke();
+    ctx.fillText(y, x, H - PAD.b + 8);
+  }
+  ctx.textAlign = 'right'; ctx.textBaseline = 'middle';
+  for (let y = 1995; y <= 2025; y += 5) {
+    const yy = Math.round(py(y)) + .5;
+    ctx.beginPath(); ctx.moveTo(PAD.l, yy); ctx.lineTo(W - PAD.r, yy); ctx.stroke();
+    ctx.fillText(y, PAD.l - 10, yy);
+  }
+
+  // diagonal
+  ctx.save();
+  ctx.setLineDash([5, 5]); ctx.strokeStyle = '#6b7f9c'; ctx.lineWidth = 1.2;
+  ctx.beginPath();
+  ctx.moveTo(px(X0), py(X0));
+  ctx.lineTo(px(Math.min(X1, Y1)), py(Math.min(X1, Y1)));
+  ctx.stroke(); ctx.restore();
+
+  // labels
+  ctx.font = '600 11px ui-sans-serif,system-ui';
+  ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+  ctx.fillStyle = 'rgba(249,115,22,.85)'; ctx.fillText('斯隆更早', PAD.l + 12, PAD.t + 8);
+  ctx.textAlign = 'right'; ctx.textBaseline = 'bottom';
+  ctx.fillStyle = 'rgba(56,189,248,.85)'; ctx.fillText('CAREER 更早', W - PAD.r - 12, H - PAD.b - 10);
+
+  // axis titles
+  ctx.fillStyle = '#8fa0b8'; ctx.font = '11.5px ui-sans-serif,system-ui';
+  ctx.textAlign = 'center'; ctx.textBaseline = 'top';
+  ctx.fillText('斯隆奖年份', PAD.l + (W - PAD.l - PAD.r) / 2, H - 19);
+  ctx.save();
+  ctx.translate(15, PAD.t + (H - PAD.t - PAD.b) / 2);
+  ctx.rotate(-Math.PI / 2);
+  ctx.textBaseline = 'middle';
+  ctx.fillText('CAREER 年份', 0, 0);
+  ctx.restore();
+
+  // points
+  let cx = 0, cs = 0, csa = 0, shown = 0;
+  for (const p of P) {
+    if (!active.has(p.f)) continue;
+    const a = reveal(p);
+    if (a <= 0) continue;
+    const x = px(p.s + p.jx), y = py(p.c + p.jy);
+    p._x = x; p._y = y; p._a = a;
+    shown++;
+    if (p.p === 'career') cx++; else if (p.p === 'sloan') cs++; else csa++;
+    const col = colorMode === 'field' ? FC[p.f] : PC[p.p];
+    ctx.globalAlpha = a * .82;
+    ctx.fillStyle = col;
+    ctx.beginPath(); ctx.arc(x, y, 3.4, 0, 6.2832); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  // hover ring
+  if (hover) {
+    ctx.strokeStyle = '#f8fafc'; ctx.lineWidth = 1.6;
+    ctx.beginPath(); ctx.arc(hover._x, hover._y, 7, 0, 6.2832); ctx.stroke();
+  }
+
+  updateCounters(cx, cs, csa, shown);
+  drawGap();
+  yearEl.textContent = Math.min(2027, Math.round(t));
+  if (!dragging) scrub.value = t;
+}
+
+function updateCounters(cx, cs, csa, shown) {
+  const tot = cx + cs + csa || 1;
+  const rows = [
+    ['career', 'CAREER 在前', cx],
+    ['sloan', '斯隆在前', cs],
+    ['same', '同年', csa]
+  ];
+  const box = document.getElementById('counters');
+  if (!box.children.length) {
+    box.innerHTML = rows.map(([k, label]) =>
+      `<div class="row"><span class="dot" style="background:${PC[k]}"></span>
+        <span>${label}</span><span class="v" id="v_${k}">0</span><span class="p" id="p_${k}">0%</span>
+        <span class="bar"><i id="b_${k}" style="background:${PC[k]};width:0"></i></span></div>`).join('');
+  }
+  for (const [k, , v] of rows) {
+    document.getElementById('v_' + k).textContent = v.toLocaleString();
+    document.getElementById('p_' + k).textContent = (v / tot * 100).toFixed(1) + '%';
+    document.getElementById('b_' + k).style.width = (v / tot * 100) + '%';
+  }
+}
+
+const GB = 12;
+function drawGap() {
+  const w = gapCv.width / (window.devicePixelRatio > 2 ? 2 : Math.min(window.devicePixelRatio || 1, 2));
+  const h = 86;
+  gctx.clearRect(0, 0, w, h);
+  const bins = new Array(GB * 2 + 1).fill(0);
+  for (const p of P) {
+    if (!active.has(p.f) || reveal(p) <= 0) continue;
+    const g = Math.max(-GB, Math.min(GB, p.g));
+    bins[g + GB]++;
+  }
+  const mx = Math.max(1, ...bins);
+  const bw = w / bins.length;
+  for (let i = 0; i < bins.length; i++) {
+    const g = i - GB;
+    const hh = bins[i] / mx * (h - 6);
+    gctx.fillStyle = g < 0 ? PC.career : (g === 0 ? PC.same : PC.sloan);
+    gctx.globalAlpha = .9;
+    gctx.fillRect(i * bw + .6, h - hh, Math.max(1, bw - 1.2), hh);
+    if (g === 0) { gctx.globalAlpha = .5; gctx.fillRect(i * bw + bw / 2 - .5, 0, 1, h); }
+  }
+  gctx.globalAlpha = 1;
+}
+
+// ---------------------------------------------------------------- controls --
+let dragging = false;
+scrub.addEventListener('input', () => {
+  dragging = true; t = parseFloat(scrub.value); playing = false; syncPlay();
+});
+scrub.addEventListener('change', () => { dragging = false; });
+playBtn.addEventListener('click', () => { playing = !playing; syncPlay(); });
+function syncPlay() { playBtn.textContent = playing ? '暂停' : '播放'; }
+document.getElementById('reset').addEventListener('click', () => {
+  t = 1993.5; playing = true; active.clear(); FIELDS.forEach(f => active.add(f.k));
+  document.querySelectorAll('#fields .chip').forEach(c => c.classList.remove('off'));
+  syncPlay();
+});
+document.getElementById('speed').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  speed = parseFloat(b.dataset.s);
+  [...e.currentTarget.children].forEach(x => x.classList.toggle('on', x === b));
+});
+document.getElementById('color').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  colorMode = b.dataset.m;
+  [...e.currentTarget.children].forEach(x => x.classList.toggle('on', x === b));
+});
+
+const fbox = document.getElementById('fields');
+fbox.innerHTML = FIELDS.map(f =>
+  `<div class="chip" data-k="${f.k}" title="${f.cn}">
+     <i style="background:${f.c}"></i>${f.k}<b>${FCOUNT[f.k] || 0}</b></div>`).join('');
+fbox.addEventListener('click', e => {
+  const c = e.target.closest('.chip'); if (!c) return;
+  const k = c.dataset.k;
+  if (active.has(k)) { active.delete(k); c.classList.add('off'); }
+  else { active.add(k); c.classList.remove('off'); }
+});
+
+// hover
+cv.addEventListener('mousemove', e => {
+  const r = cv.getBoundingClientRect();
+  const mx = e.clientX - r.left, my = e.clientY - r.top;
+  let best = null, bd = 14 * 14;
+  for (const p of P) {
+    if (!p._x || reveal(p) <= 0 || !active.has(p.f)) continue;
+    const d = (p._x - mx) ** 2 + (p._y - my) ** 2;
+    if (d < bd) { bd = d; best = p; }
+  }
+  hover = best;
+  if (!best) { tip.style.opacity = 0; return; }
+  const sign = best.g > 0 ? '+' : '';
+  const verdict = best.g < 0 ? 'CAREER 早 ' + (-best.g) + ' 年'
+    : best.g > 0 ? '斯隆早 ' + best.g + ' 年' : '同一年';
+  tip.innerHTML = `<div class="nm">${best.n}</div>
+    <div class="l"><em>斯隆 ${best.s}</em><span>${best.si}</span></div>
+    <div class="l"><em>CAREER ${best.c}</em><span>${best.ci}</span></div>
+    <div class="l gd" style="color:${PC[best.p]}">${verdict}</div>`;
+  tip.style.opacity = 1;
+  const tw = tip.offsetWidth, th = tip.offsetHeight;
+  tip.style.left = Math.min(Math.max(8, mx + 16), W - tw - 8) + 'px';
+  tip.style.top = Math.min(Math.max(8, my - th - 12), H - th - 8) + 'px';
+});
+cv.addEventListener('mouseleave', () => { hover = null; tip.style.opacity = 0; });
+
+addEventListener('keydown', e => {
+  if (e.code === 'Space') { e.preventDefault(); playing = !playing; syncPlay(); }
+});
+
+// ------------------------------------------------------------------- loop --
+const YPS = 2.0;
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(.1, (now - last) / 1000); last = now;
+  if (playing && !dragging) {
+    t += dt * YPS * speed;
+    if (t >= TEND) { t = TEND; playing = false; syncPlay(); }
+  }
+  draw();
+  requestAnimationFrame(loop);
+}
+
+new ResizeObserver(() => { fit(); draw(); }).observe(cv.parentElement);
+fit(); syncPlay(); requestAnimationFrame(loop);
+</script>
+</body>
+</html>
